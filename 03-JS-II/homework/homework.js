@@ -1,3 +1,22 @@
+/*for: 	
+      	Es una palabra clave que crea un bucle, el cual nos permite repetir una "n" cantidad de veces las instrucciones que nosotros
+       introducimos y este bucle consiste en tres expresiones opcionales (Declarar variable ; Expresión condicional ; Incremento de variable)
+       las cuales están encerradas entre paréntesis y separadas por punto y coma (";").
+
+&& : 
+	    Éste es un operador denominado "Y" ("AND"), el cual evalúa dos expresiones y nos dice si ambas son verdaderas("true") 
+       o si una o las dos, son falsas ("false").
+
+|| :
+	    "Ó" ("OR"), estas dos barras verticales nos va a decir si una expresión es verdadera, arrojando "true" si una o ambas
+       lo son, prosiguiendo a ejecutar el código. Si AMBAS expresiones son falsas, arrojará "false" por lo que el código no se
+       ejecutará. 	
+
+! : 	
+      "NOT" ("NO"), éste operador lo que hace es arrojarnos un valor booleano opuesto del valor que se le pasa. Por ejemplo: 
+       1 !== '1'; // No son iguales.  
+*/
+
 // No cambies los nombres de las funciones.
 
 function obtenerMayor(x, y) {
