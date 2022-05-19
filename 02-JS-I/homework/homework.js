@@ -1,3 +1,53 @@
+/*
+Variables : 
+
+	Palabra clave “var”. Es una forma de almacenar el valor de un objeto para ser utilizado luego. Se le pone un nombre (el cual vamos a utilizar) y 
+	podemos asignarle un valor usango el signo = . Ejemplo:
+
+ 			var obj = “objeto”; 
+
+Strings: 
+
+	Son cadenas literales encerradas entre comillas (“ ”), lo utilizamos para describir el valor de la variable o para retornar algún texto, etc. Ejemplo:
+
+			var auto = "Volvo"; 
+
+Funciones (argumentos, return):
+
+	Las funciones son similares a un procedimiento, es decir, un conjunto de instrucciones que realiza un tarea o calcula un valor y para que se cumpla dicha
+	función, nos tiene que devolver una salida o un valor relacionado con la entrada que introdujimos. La sintaxis de una es: palabra clave function + nombre +
+	( ) + {} . 
+
+		function hola() {} 
+	
+	  ARGUMENTOS: Se ubican dentro de los paréntesis cuando declaramos una función, se puede utilizar una variable declarada, numeros, letras,etc , las cuales vamos a
+		en los códigos posteriores para que se cumpla la función.
+	
+	  RETURN: esta palabra clave tiene la función de retornar o devolver lo que la función leyó, es decir, cuando la función se topa con un "return" inmediatamente
+		frena el procedimiento y devuelve lo especificado. 
+			
+		function hola(nombre) {
+		  return "hola" + nombre;	
+		}
+
+Declaraciones if:
+	
+	Se utiliza para tomar decisiones, evalúa una expresión y si ésta es verdadera, realiza la tarea dada en caso positivo y sino no. 
+	
+ 		function puedeManejar(edad) {
+		  if (edad > 18) {
+		  return true;
+		  }
+		  return false; 
+ 		}
+
+Valores booleanos (true, false)
+	
+	Éstos valores nos indican dos posibilidades, activar o desactivar. 
+
+*/ 
+
+
 // En estas primeras 6 preguntas, reemplaza `null` por la respuesta
 
 // Crea una variable "string", puede contener lo que quieras:
