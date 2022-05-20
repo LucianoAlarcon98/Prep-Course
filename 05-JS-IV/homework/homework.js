@@ -1,3 +1,63 @@
+/*
+Objetos: 
+	
+	Es un contenedor de datos que tiene mucha información sobre una cosa. Estos se instancian con llaves {}. Dentro
+	de las mismas van a estar los llamados clave : valor donde clave es el identificador y valor es el que 
+	queremos guardar en dicha clave. Los objetos tienen que estar separados con coma (,) . Ejemplo:
+	
+		var usuario = {
+			nombre : "Dario",
+			apelido : "Paez",
+		}	
+
+
+Propiedades
+
+	Las propiedades son variables adjunta a los objetos definiendo las características del mismo y se puede 
+	acceder a la propiedad de un objeto mediante la notación de puntos. Ejemplo: 
+
+		nombre del objeto . nombre de la clave
+
+Métodos:
+
+	Son funciones guardadas en objetos, es decir que son la propiedad del objeto. Se puede usar una palabra
+	clave para el nombre y el valor para una función o podemos llamarlo con un argumento. Se llama mediante 
+	la notación de puntos y paréntesis al final (). Ejemplo: 
+		
+		var objeto = {
+		 decirHola = function () {
+			return "Hola";
+		 }
+		}
+Bucle for…in
+ 	
+	Se utiliza para iterar cada clave : valor que tengamos en un objeto. Esto se hace declarando una variable
+	, la clave, in y el nombre del objeto; todo esto entre paréntesis. 
+		
+		for(var nombre in usuario){
+		return nombre;
+			o
+		return usuario[nombre];
+
+Notación de puntos vs notación de corchetes
+
+	La notación de puntos es cuando llamamos al nombre del objeto . nombre de clave. Ejemplo:
+	
+		usuario.nombre;
+
+	La notación de corchetes es cuando escribimos nombre del objeto[nombre de clave] ésta última puede ser una
+	cadena o número y tiene que estar entre comillas dentro de los corchetes y también puede ser una variable 
+	que apunte a una cadena o número. Basandonos en el ejemplo de "Objetos"
+		
+		usuario["nombre"];
+ 			o
+		var passString = password;
+		usuario[passString];
+*/
+
+
+
+
 // No cambies los nombres de las funciones.
 
 function crearGato (nombre, edad) {
@@ -6,6 +66,14 @@ function crearGato (nombre, edad) {
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
+  var obj = {
+    nombre : nombre,
+    edad: edad,
+    meow: function () {
+      return "Meow!";
+    }
+  };
+    return obj;º
 }
 
 function agregarPropiedad (objeto, property) {
@@ -13,6 +81,9 @@ function agregarPropiedad (objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
+  objeto[property] = null;
+    return objeto ;
+  
 }
 
 function invocarMetodo (objeto, metodo) {
@@ -20,13 +91,17 @@ function invocarMetodo (objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
+  objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco (objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-
+ 
+  var result = objetoMisterioso.numeroMisterioso * 5
+    return result; 
+  
 }
 
 function eliminarPropiedad (objeto, unaPropiedad) {
@@ -34,19 +109,31 @@ function eliminarPropiedad (objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
+  delete objeto[unaPropiedad];
+    return objeto;
 }
 
 function nuevoUsuario (nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-
+  var user = {
+    nombre : nombre,
+    email : email, 
+    password : password,
+  };
+    return user; 
 }
 
 function tieneEmail (usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
+  if (usuario["email"]) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function tienePropiedad (objeto, propiedad) {
@@ -54,6 +141,11 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
+  if (objeto[propiedad]) {
+    return true;
+  } else {
+    return false; 
+  }
 }
 
 function verificarPassword (usuario, password) {
@@ -61,12 +153,16 @@ function verificarPassword (usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
-}
+  return usuario["password"] === password;
+} 
 
 function actualizarPassword (usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
+  usuario.password = nuevaPassword
+  return usuario;
+  
 }
 
 function agregarAmigo (usuario, nuevoAmigo) {
@@ -74,6 +170,8 @@ function agregarAmigo (usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // Tu código:
+  usuario.amigos.push(nuevoAmigo); 
+    return usuario; 
 }
 
 function pasarUsuarioAPremium (usuarios) {
@@ -82,6 +180,10 @@ function pasarUsuarioAPremium (usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
+  for (var i = 0 ; i < usuarios.length ; i++) {
+    usuarios[i].esPremium = true;
+  } 
+  return usuarios; 
 }
 
 function sumarLikesDeUsuario (usuario) {
@@ -91,6 +193,11 @@ function sumarLikesDeUsuario (usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
+  var suma = 0; 
+  for (var i = 0 ; i < usuario.posts.length ; i++) {
+    suma = suma + usuario.posts[i].likes; 
+  }
+  return suma;
 }
 
 function agregarMetodoCalculoDescuento (producto) {
@@ -103,8 +210,12 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
+  producto.calcularPrecioDescuento = function() {
+    return this.precio - (this.precio * this.porcentajeDeDescuento); 
+  };
+  return producto;
+  }
 
-}
 
 // No modificar nada debajo de esta línea
 // --------------------------------
