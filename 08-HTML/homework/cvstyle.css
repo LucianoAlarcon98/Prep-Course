@@ -1,0 +1,31 @@
+
+           
+          .centro {
+                position:absolute;
+                background-color: gray;
+                height:200px; 
+                width: 1310px; 
+                padding: 20px;
+                top:0px;
+                left:0px;
+            }
+           
+            .left{
+                position: absolute;
+                top: 235px;
+                left: 0px;
+                background-color: rgb(126, 219, 231);
+                width:625px;
+                height:680 ;
+                padding:30px; 
+            }
+            
+            .right{
+                position: absolute;
+                top: 235px;
+                right: 0px;
+                background-color: rgb(126, 219, 231);
+                width: 625px;
+                height: 680px;
+                padding: 30px;
+                }
